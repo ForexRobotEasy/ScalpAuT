@@ -1,0 +1,93 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                             ScalpAuT.mq5         |
+//|                      Developed by Forex Robot Easy Team          |
+//|                  Website: forexroboteasy.com                      |
+//+------------------------------------------------------------------+
+#property copyright 'Forex Robot Easy Team'
+#property link      'forexroboteasy.com'
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Load historical quotes for XAU/USD
+    LoadQuotes('XAU/USD');
+
+    // Set the VIST system timings
+    SetVISTTimings();
+
+    // Set chart timeframe to 1-minute
+    SetChartPeriod(1);
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Free memory and resources
+    CleanUp();
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Check if it's time to execute the ScalpAuT algorithm
+    if (IsVISTTiming())
+    {
+        // Execute ScalpAuT algorithm
+        ExecuteScalpAuT();
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Function to load historical quotes                               |
+//+------------------------------------------------------------------+
+void LoadQuotes(string symbol)
+{
+    // Load quotes for the specified symbol
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Function to set the VIST system timings                           |
+//+------------------------------------------------------------------+
+void SetVISTTimings()
+{
+    // Set VIST system timings
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Function to check if it's VIST timing                            |
+//+------------------------------------------------------------------+
+bool IsVISTTiming()
+{
+    // Check if it's VIST timing
+    // ...
+    return true;
+}
+
+//+------------------------------------------------------------------+
+//| Function to execute the ScalpAuT algorithm                       |
+//+------------------------------------------------------------------+
+void ExecuteScalpAuT()
+{
+    // Implement ScalpAuT algorithm
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Function to clean up memory and resources                        |
+//+------------------------------------------------------------------+
+void CleanUp()
+{
+    // Clean up memory and resources
+    // ...
+}
